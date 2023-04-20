@@ -1,7 +1,6 @@
 <template>
-    <afameScence/>
+    <h1>3D的 demo</h1>
 </template>
 <script setup>
-import afameScence from './components/afameScence.vue';
 
 </script>
