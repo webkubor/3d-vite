@@ -212,6 +212,11 @@
   resolved "https://registry.npmmirror.com/@vue/shared/-/shared-3.2.47.tgz#e597ef75086c6e896ff5478a6bfc0a7aa4bbd14c"
   integrity sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==
 
+babylonjs@^5.57.1:
+  version "5.57.1"
+  resolved "https://registry.npmmirror.com/babylonjs/-/babylonjs-5.57.1.tgz#ec925c5a3f2ac547f89d3c1565d86527c33516ac"
+  integrity sha512-X1t3mi8GuJjFVziN1yBJtekphilGN9VfOHm2tn/H6gra+WS7UZkrOOHLlKwYEXKdU73opxOR95jHXmv692KR6g==
+
 copy-anything@^2.0.1:
   version "2.0.6"
   resolved "https://registry.npmmirror.com/copy-anything/-/copy-anything-2.0.6.tgz#092454ea9584a7b7ad5573062b2a87f5900fc480"
