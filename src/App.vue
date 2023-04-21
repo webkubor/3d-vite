@@ -1,48 +1,34 @@
 <template>
-    <canvas ref="canvas"></canvas>
+    <canvas ref="canvas" width="150" height="150">
+    </canvas>
 </template>
 <script setup>
 import { onMounted, ref } from 'vue'
-import * as BABYLON from 'babylonjs'
+
+const canvas = ref(null);
+const context = ref(null);
+
+const initCanvas = () => {
+    context.value = canvas.value.getContext('2d');
+
+    console.log(context.value, "context")
+    context.value.fillStyle = "rgb(200,0,0)";
+    context.value.fillRect(10, 10, 55, 50);
+
+    context.value.fillStyle = "rgba(0, 0, 200, 0.5)";
+    context.value.fillRect(30, 30, 55, 50);
+};
 
 
-const canvasRef = ref(null)
+
 onMounted(() => {
-    // 获取HTML canvas元素
-    const canvas = canvasRef.value
-    // 创建Babylon.js引擎
-    const engine = new BABYLON.Engine(canvas, true)
-    // 创建Babylon.js场景
-    const scene = new BABYLON.Scene(engine)
 
-    // 添加相机
-    // This creates and positions a free camera (non-mesh)
-    var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
-
-    // This targets the camera to scene origin
-    camera.setTarget(BABYLON.Vector3.Zero());
-
-    // This attaches the camera to the canvas
-    camera.attachControl(canvas, true);
-
-    // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
-    var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
-
-    // Default intensity is 1. Let's dim the light a small amount
-    light.intensity = 0.7;
-
-    // Our built-in 'sphere' shape.
-    var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 2, segments: 32 }, scene);
-
-    // Move the sphere upward 1/2 its height
-    sphere.position.y = 1;
-
-    // 渲染场景
-    engine.runRenderLoop(() => {
-        scene.render()
-    })
-
+    initCanvas()
 })
 
-
 </script>
+<style  lang="less">
+canvas {
+    border: 1px solid black;
+}
+</style>
